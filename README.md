@@ -10,6 +10,6 @@ Small webserver for small tests. Use it to answer questions
 
 ![blinking](./public/blinking.gif)
 
-- An endpoit!
+- An endpoint!
 
 ![get_blinky](./public/get_blinky.gif)
