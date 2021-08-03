@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/hits', (req,res) => {
-    res.send(hits);
+    res.send(`${hits}`);
 })
 
 app.listen(PORT, HOST, () => console.log(`${HOST} Listening on ${PORT}...`));
