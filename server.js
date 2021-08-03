@@ -14,4 +14,8 @@ app.get('/blinky',(req,res)=>{
     res.send(data);
 })
 
-app.listen(PORT, HOST, () => console.log(`${HOST} Listening on ${PORT} ...`));
+app.get('/blinky/hits', (req,res) => {
+    res.send(hits);
+})
+
+app.listen(PORT, HOST, () => console.log(`${HOST} Listening on ${PORT}...`));
