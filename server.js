@@ -11,7 +11,7 @@ app.use(express.static('public'))
 app.get('/blinky',(req,res)=>{
     const data = fs.readFileSync("blinky");
     res.send(data);
-    fs.appendFileSync('./log.txt',`\n/blinky has been hit ${hits++} time/s`);
+    console.log(`\n/blinky has been hit ${hits++} time/s`);
 })
 
 app.listen(PORT, HOST, () => console.log(`${HOST} Listening on ${PORT} ...`));
