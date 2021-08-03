@@ -8,7 +8,7 @@ var app = express();
 
 app.use(express.static('public'))
 
-app.get('/fish',(req,res)=>{
+app.get('/',(req,res)=>{
     console.log(`\n/blinky has been hit ${hits++} time/s`);
     const data = fs.readFileSync("blinky");
     res.send(data);
