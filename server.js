@@ -2,7 +2,7 @@ var express = require('express')
 var fs = require('fs');
 
 const PORT = 8080;
-const HOST = 'localhost';
+const HOST = '0.0.0.0';
 
 var app = express();
 
@@ -13,4 +13,4 @@ app.get('/blinky',(req,res)=>{
     res.send(data);
 })
 
-app.listen(PORT, HOST, () => console.log(`${HOST}:${PORT}`))
+app.listen(PORT, HOST, () => console.log(`${HOST} Listening on ${PORT} ...`));
