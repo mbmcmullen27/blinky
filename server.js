@@ -9,13 +9,13 @@ var app = express();
 app.use(express.static('public'))
 
 app.get('/blinky',(req,res)=>{
-    console.log(`\n/blinky has been hit ${++hits} time/s`);
+    console.log(`/blinky has been hit ${++hits} time/s`);
     const data = fs.readFileSync("blinky");
     res.send(data);
 })
 
 app.get('/hits', (req,res) => {
-    res.send(`${hits}`);
+    res.send(`${hits}\n`);
 })
 
 app.listen(PORT, HOST, () => console.log(`${HOST} Listening on ${PORT}...`));
