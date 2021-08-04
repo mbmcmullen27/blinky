@@ -1,5 +1,10 @@
 # Blinky
 
+Get the image from [docker hub](https://hub.docker.com/r/mcmull27/blinky)
+```bash
+# get the arm image for raspberry pi
+docker pull mcmull27/blinky:arm
+```
 Small webserver for small tests. Use it to answer questions
 - Can I hit an endpoit?
 - Are my ports open?
