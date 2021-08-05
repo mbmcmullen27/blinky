@@ -2,14 +2,14 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-const PORT = 8080;
-const HOST = '0.0.0.0';
-const prefix = '/app'
+var HOST = process.env.HOST == undefined ? HOST='0.0.0.0' : HOST=process.env.HOST;
+var PORT = process.env.PORT == undefined ? PORT=8080 : PORT=process.env.HOST;
+var PREFIX = process.env.PREFIX == undefined ? PREFIX='app' : PREFIX=process.env.PREFIX
 
 var hits = 0;
 var app = express();
 
-app.use(prefix,router);
+app.use('/'+PREFIX,router);
 
 router.use(express.static('public'))
 
