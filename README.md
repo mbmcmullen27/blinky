@@ -21,12 +21,12 @@ node server.js
 Browse the page at localhost:
 
 ```url
-localhost:8080/blinky.html
+localhost:8080/app/blinky.html
 ```
 
 Get the endpoint with curl:
 ```bash
-curl localhost:8080/blinky
+curl localhost:8080/app/blinky
 ```
 
 ## Features
