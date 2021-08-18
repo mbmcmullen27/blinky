@@ -1,0 +1,5 @@
+node {
+    checkout scm
+    def blinkyImage = docker.build("blinky:${env.BUILD_ID}")
+    blinkyImage.push()
+}
