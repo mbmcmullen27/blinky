@@ -38,7 +38,12 @@ Get the endpoint with curl:
 curl localhost:8080/app/blinky
 ```
 
-Set the /blinky endpoint's response code with a POST to /status:
+Get number of requests made to the endpoint with curl:
+```bash
+curl localhost:8080/app/hits
+```
+
+Set the /blinky endpoint's response code with a POST to /status with curl:
 
 ```bash
 curl -H "Content-Type: application/json" -d '{"status":"401"}' -X POST localhost:8080/app/status
