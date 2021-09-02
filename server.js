@@ -17,7 +17,7 @@ app.use('/'+PREFIX,router);
 router.use(express.static('public'))
 
 router.get('/blinky',(req,res)=>{
-    console.log(`/blinky has been hit ${++hits} time/s`);
+    console.log(`/blinky has been hit ${++hits} time/s -> active response code:${status}`);
     const data = fs.readFileSync("blinky");
     res.status(status);
     res.send(data);
