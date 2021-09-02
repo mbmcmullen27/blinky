@@ -12,6 +12,15 @@ Small webserver for small tests. Use it to answer questions
 
 ## Instructions
 
+Set HOST, PORT, and route PREFIX with corresponding env vars.
+Defaults:
+
+```bash
+export HOST="0.0.0.0"
+export PORT="8080"
+export PREFIX="app"
+```
+
 Start the server with nodejs:
 
 ```bash
@@ -29,6 +38,11 @@ Get the endpoint with curl:
 curl localhost:8080/app/blinky
 ```
 
+Set the /blinky endpoint's response code with a POST:
+
+```bash
+curl -H "Content-Type: application/json" -d '{"status":"401"}' -X POST localhost:8080/app/status
+```
 ## Features
 - A webpage!
 
