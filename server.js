@@ -10,7 +10,7 @@ var hits = 0;
 var status = 200;
 var app = express();
 app.use(express.json());
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended:true}))
 
 app.use('/'+PREFIX,router);
 
