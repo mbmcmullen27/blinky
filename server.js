@@ -4,7 +4,7 @@ var fs = require('fs');
 
 var HOST = process.env.HOST == undefined ? HOST='0.0.0.0' : HOST=process.env.HOST;
 var PORT = process.env.PORT == undefined ? PORT=8080 : PORT=process.env.PORT;
-var PREFIX = process.env.PREFIX == undefined ? PREFIX='app' : PREFIX=process.env.PREFIX
+var PREFIX = process.env.PREFIX == undefined ? PREFIX='app' : PREFIX=process.env.PREFIX;
 
 var hits = 0;
 var status = 200;
@@ -39,4 +39,11 @@ router.get('/hits', (req,res) => {
     res.send(`${hits}\n`);
 })
 
+app.get('/*',(req,res)=>{
+    console.log('This place is not a place of honor...');
+    console.log('no highly esteemed deed is commemorated here...');
+    console.log(`nothing valued is here @ ${req.originalUrl}`);
+    res.status(404);
+    res.send();
+})
 app.listen(PORT, HOST, () => console.log(`${HOST} Listening to /${PREFIX}/* on ${PORT}...`));
