@@ -40,7 +40,7 @@ router.get('/hits', (req,res) => {
 })
 
 app.get('/*',(req,res)=>{
-    console.log('This place is not a place of honor...');
+    console.log('\nThis place is not a place of honor...');
     console.log('no highly esteemed deed is commemorated here...');
     console.log(`nothing valued is here @ ${req.originalUrl}`);
     res.status(404);
