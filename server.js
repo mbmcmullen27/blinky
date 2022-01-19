@@ -15,7 +15,9 @@ app.use('/'+PREFIX, router);
 router.use(express.static('public'))
 
 router.get('/blinky',(req,res)=>{
-    console.log(`/blinky has been hit ${++blinky.hits} time/s -> active response code:${blinky.status}`);
+    console.log(
+        `/blinky has been hit ${++blinky.hits} time/s -> active response code:${blinky.status}`
+    );
     res.status(blinky.status);
     res.send(Blinky.image);
 })
