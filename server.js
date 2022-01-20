@@ -14,7 +14,7 @@ app.use('/'+PREFIX, router);
 
 router.use(express.static('public'))
 
-router.get('/blinky',(req,res)=>{
+router.get('/blinky',(req, res)=>{
     console.log(
         `/blinky has been hit ${++blinky.hits} time/s -> active response code:${blinky.status}`
     );
@@ -22,7 +22,7 @@ router.get('/blinky',(req,res)=>{
     res.send(Blinky.image);
 })
 
-router.post('/status', (req,res) => {
+router.post('/status', (req, res) => {
     var rstatus = parseInt(req.body.status);
     console.log(req.body);
     if(rstatus <= 600 && rstatus >= 100){
@@ -34,11 +34,33 @@ router.post('/status', (req,res) => {
     res.send();
 })
 
-router.get('/hits', (req,res) => {
+router.get('/hits', (req, res) => {
     res.send(`${blinky.hits}\n`);
 })
 
-app.get('/*',(req,res)=>{
+router.get('/timeout/:miliseconds', (req, res) => {
+    res.status(200)
+    var ms = parseInt(req.params.miliseconds)
+    console.log(`Timeout! Wait for ${ms}ms`)
+    setTimeout(()=>res.send(':thumbsup\n'), ms)
+})
+
+router.get('/n/:count', (req, res) => {
+    res.status(200)
+    res.send(blinky.n(parseInt(req.params.count)))
+})
+
+router.get('/nlogn/:count', (req, res) => {
+    res.status(200)
+    res.send(blinky.nlogn(parseInt(req.params.count)))
+})
+
+router.get('/nsquared/:count', (req, res) => {
+    res.status(200)
+    res.send(blinky.nsquared(parseInt(req.params.count)))
+})
+
+app.get('/*',(req, res)=>{
     const message = error404s[Math.floor(Math.random()*3)]
     console.log(`\n${message} @ ${req.originalUrl}`);
     res.status(404);
