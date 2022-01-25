@@ -1,8 +1,8 @@
-FROM node:15-alpine
+FROM node:17.4.0-stretch-slim
 
 WORKDIR /app
 
-COPY . .
+COPY ./src package*.json /app
 
 RUN npm install
 

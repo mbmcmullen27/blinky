@@ -1,4 +1,4 @@
-const Blinky = require('./model.js')
+const Blinky = require('./src/model.js')
 
 let b = new Blinky()
 console.log(Blinky.image)
