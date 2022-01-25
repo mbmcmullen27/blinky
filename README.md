@@ -77,8 +77,8 @@ curl localhost:8080/app/timeout/1000
 ## Features
 - A webpage!
 
-![blinking](./public/src/blinking.gif)
+![blinking](./src/public/blinking.gif)
 
 - An endpoint!
 
-![get_blinky](./public/src/get_blinky.gif)
+![get_blinky](./src/public/get_blinky.gif)
